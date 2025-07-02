@@ -1,17 +1,21 @@
 
+import Controller.ContactoController;
 import Controller.Sets;
 
 public class App {
     public static void main(String[] args) throws Exception {
         Sets sets = new Sets();
-        runHaashSet(sets);
+        /*runHaashSet(sets);
         runLinkedHashSet(sets);
         runTreeSet(sets);
         runTreeSetConComparador(sets);
-        runTreeSetConComparador2(sets);
+        runTreeSetConComparador2(sets);*/
+        new ContactoController();
+        
     }
 
-    public static void runHaashSet(Sets sets) {
+    
+    /*public static void runHaashSet(Sets sets) {
         System.out.println("--- HashSet ---");
         System.out.println("Elementos del HashSet (No se garantiza el orden):");
         for (String palabra : sets.construirHashSet()) {
@@ -48,5 +52,5 @@ public class App {
         for (String elemento : sets.construirTreeSetConComparador2()) {
             System.out.println(elemento);
         }
-    }
+    }*/
 }
