@@ -1,6 +1,8 @@
 package Controller;
 
 import models.Contacto;
+import utils.ContactoComparator;
+import utils.ContactoComparatorPorNumero;
 
 import java.util.Set;
 import java.util.TreeSet;
@@ -8,36 +10,48 @@ import java.util.TreeSet;
 public class ContactoController {
 
     public ContactoController() {
+        System.out.println("Nombres");
         runTreeContacto();
+        System.out.println("Telfonos");
+        runTreeContactoconNumero();
     }
 
     private void runTreeContacto() {
-        // TreeSet con ContactoComparator (orden por apellido, nombre y teléfono)
-        Set<Contacto> contactosPorApellido = new TreeSet<>(new utils.ContactoComparator());
-        // TreeSet con ContactoComparatorPorNumero (orden por número de teléfono)
-        Set<Contacto> contactosPorNumero = new TreeSet<>(new utils.ContactoComparatorPorNumero());
+        ContactoComparator contactoComparator = new ContactoComparator();
+        Set<Contacto> contactos = new TreeSet<>(contactoComparator);    
     
         // Agregar contactos a ambos conjuntos
-        contactosPorApellido.add(new Contacto("Pedro", "Lopez", "222222222"));
-        contactosPorApellido.add(new Contacto("Luis", "Perez", "111111111"));
-        contactosPorApellido.add(new Contacto("Pedro", "Gonzales", "123456789"));
-        contactosPorApellido.add(new Contacto("Ana", "Perez", "987654321"));
-        contactosPorApellido.add(new Contacto("Pedro", "Lopez", "123456789"));
-        contactosPorApellido.add(new Contacto("Pedro", "Lopez", "123456789"));
+        contactos.add(new Contacto("Pedro", "Lopez", "222222222"));
+        contactos.add(new Contacto("Luis", "Perez", "111111111"));
+        contactos.add(new Contacto("Pedro", "Gonzales", "123456789"));
+        contactos.add(new Contacto("Ana", "Perez", "987654321"));
+        contactos.add(new Contacto("Pedro", "Lopez","123456789"));
+        contactos.add(new Contacto("Pedro", "Gonzales", "123456789"));
+        contactos.add(new Contacto("Pedro", "Lopez", "222222222"));
+
+        for(Contacto contacto : contactos){
+            System.out.println(contacto);}
+        }
+
+        private void runTreeContactoconNumero() {
+        ContactoComparatorPorNumero contactoComparatorPorNumero = new ContactoComparatorPorNumero();
+        Set<Contacto> contactos = new TreeSet<>(contactoComparatorPorNumero);    
     
-        contactosPorNumero.addAll(contactosPorApellido);
-    
-        // Imprimir contactos ordenados por apellido, nombre
-        System.out.println("Contactos ordenados por apellido, nombre y teléfono:");
-        for (Contacto contacto : contactosPorApellido) {
+        // Agregar contactos a ambos conjuntos
+        contactos.add(new Contacto("Pedro", "Lopez", "222222222"));
+        contactos.add(new Contacto("Luis", "Perez", "111111111"));
+        contactos.add(new Contacto("Pedro", "Gonzales", "123456789"));
+        contactos.add(new Contacto("Ana", "Perez", "987654321"));
+        contactos.add(new Contacto("Pedro", "Lopez","123456789"));
+        contactos.add(new Contacto("Pedro", "Gonzales", "123456789"));
+        contactos.add(new Contacto("Pedro", "Lopez", "222222222"));
+
+        for(Contacto contacto : contactos){
             System.out.println(contacto);
         }
-    
-        // Imprimir contactos ordenados por número de teléfono
-        System.out.println("\nContactos ordenados por número de teléfono:");
-        for (Contacto contacto : contactosPorNumero) {
-            System.out.println(contacto);
-        }
+
+
     }
+    
     
 }

@@ -35,3 +35,4 @@ Para ejecutar el proyecto:
    javac App.java Controller/Sets.java
 
 ![alt text](<Captura de pantalla 2025-07-01 084726.png>)
+![alt text](image.png)
