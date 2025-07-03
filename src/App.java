@@ -1,5 +1,6 @@
 
 import Controller.ContactoController;
+import Controller.Ejercicios;
 import Controller.Sets;
 
 public class App {
@@ -12,6 +13,8 @@ public class App {
         runTreeSetConComparador2(sets);*/
         System.out.println("Elkin Chamba ");
         ContactoController contactoController = new ContactoController();
+        Ejercicios ejercicios = new Ejercicios();
+    
         
     }
 

@@ -36,3 +36,4 @@ Para ejecutar el proyecto:
 
 ![alt text](<Captura de pantalla 2025-07-01 084726.png>)
 ![alt text](image.png)
+![alt text](image-1.png)
